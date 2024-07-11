@@ -42,11 +42,11 @@ app.options('*', cors());
 
 // limit repeated failed requests to auth endpoints
 if (config.env === 'production') {
-  app.use('/api/auth', authLimiter);
+  app.use('/auth', authLimiter);
 }
 
 // api routes
-app.use('/api', routes);
+app.use('/', routes);
 
 app.get('/', (req, res) => {
   res.send('Hello');

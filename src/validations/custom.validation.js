@@ -9,7 +9,7 @@ const password = (value, helpers) => {
 };
 
 const phoneNumber = (value, helpers) => {
-  if (!/^0\d{10}$/.test(value)) {
+  if (!/^(\+\d{1,3})?\d{10}$/.test(value)) {
     return helpers.message('Invalid Phone Number Format');
   }
 

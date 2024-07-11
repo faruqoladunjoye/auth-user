@@ -50,7 +50,7 @@ module.exports = (sequelize, dataType) => {
       validate: {
         isPhoneNumber: function (value) {
           if (!value) return;
-          if (!/^0\d{10}$/.test(value)) {
+          if (!/^(\+\d{1,3})?\d{10}$/.test(value)) {
             throw new Error('Invalid phone number format');
           }
         },
