@@ -1,7 +1,7 @@
 const express = require('express');
 const authRoute = require('./auth.route');
 const userRoute = require('./user.route');
-const organisationRoute = require('./organisation.route');
+const organizationRoute = require('./organization.route');
 
 const router = express.Router();
 
@@ -16,7 +16,7 @@ const defaultRoutes = [
   },
   {
     path: '/api/organisations',
-    route: organisationRoute,
+    route: organizationRoute,
   },
 ];
 

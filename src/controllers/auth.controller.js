@@ -24,13 +24,13 @@ const register = catchAsync(async (req, res) => {
     phone,
   });
 
-  const organisationName = `${firstName}'s Organisation`;
-  const organisation = await db.organisation.create({
-    name: organisationName,
+  const organizationName = `${firstName}'s Organization`;
+  const organization = await db.organization.create({
+    name: organizationName,
     description: '',
   });
 
-  await organisation.addUser(user);
+  await organization.addUser(user);
 
   const token = jwt.sign({ userId: user.id }, config.jwt.secret, { expiresIn: config.jwt.accessExpirationMinutes });
   res.status(httpStatus.CREATED).send({

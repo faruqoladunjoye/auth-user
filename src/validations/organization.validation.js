@@ -1,13 +1,13 @@
 const Joi = require('joi');
 
-const createorganisation = {
+const createOrganization = {
   body: Joi.object().keys({
     name: Joi.string().required(),
     description: Joi.string().optional(),
   }),
 };
 
-const getorganisationById = {
+const getOrganizationById = {
   params: Joi.object().keys({
     orgId: Joi.alternatives()
       .try(Joi.string().guid({ version: 'uuidv4' }), Joi.string().valid('general'))
@@ -15,14 +15,14 @@ const getorganisationById = {
   }),
 };
 
-const getorganisations = {
+const getOrganizations = {
   query: Joi.object().keys({
     limit: Joi.number().integer(),
     page: Joi.number().integer(),
   }),
 };
 
-const addUserToorganisation = {
+const addUserToOrganization = {
   params: Joi.object().keys({
     orgId: Joi.alternatives()
       .try(Joi.string().guid({ version: 'uuidv4' }), Joi.string().valid('general'))
@@ -36,8 +36,8 @@ const addUserToorganisation = {
 };
 
 module.exports = {
-  createorganisation,
-  getorganisationById,
-  getorganisations,
-  addUserToorganisation,
+  createOrganization,
+  getOrganizationById,
+  getOrganizations,
+  addUserToOrganization,
 };
