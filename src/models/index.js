@@ -1,3 +1,4 @@
+const pg = require('pg');
 const Sequelize = require('sequelize');
 const { sequelize } = require('../config/config');
 const logger = require('../config/logger');
@@ -5,7 +6,7 @@ const logger = require('../config/logger');
 const db = {};
 
 const sequelizeInstance = new Sequelize(sequelize.url, {
-  dialect: sequelize.dialect,
+  dialectModule: pg,
   pool: {
     min: 0,
     max: 100,
