@@ -6,7 +6,7 @@ const compression = require('compression');
 const cors = require('cors');
 const config = require('./config/config');
 const morgan = require('./config/morgan');
-const { authLimiter } = require('./middlewares/rateLimiter');
+// const { authLimiter } = require('./middlewares/rateLimiter');
 const routes = require('./routes');
 const { errorConverter, errorHandler } = require('./middlewares/error');
 const { db } = require('./models');
@@ -39,9 +39,9 @@ app.use(cors());
 app.options('*', cors());
 
 // limit repeated failed requests to auth endpoints
-if (config.env === 'production') {
-  app.use('/auth', authLimiter);
-}
+// if (config.env === 'production') {
+//   app.use('/auth', authLimiter);
+// }
 
 // api routes
 app.use('/', routes);
