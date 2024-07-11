@@ -20,7 +20,7 @@ const getUser = catchAsync(async (req, res) => {
       firstName: user.firstName,
       lastName: user.lastName,
       email: user.email,
-      phoneNumber: user.phoneNumber,
+      phone: user.phone,
     },
   });
 });

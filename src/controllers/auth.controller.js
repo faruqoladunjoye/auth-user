@@ -7,7 +7,7 @@ const ApiError = require('../utils/ApiError');
 const { db } = require('./../models');
 
 const register = catchAsync(async (req, res) => {
-  const { firstName, lastName, email, password, phoneNumber } = req.body;
+  const { firstName, lastName, email, password, phone } = req.body;
 
   const existingUser = await db.users.findOne({ where: { email } });
   if (existingUser) {
@@ -21,7 +21,7 @@ const register = catchAsync(async (req, res) => {
     lastName,
     email,
     password: hashedPassword,
-    phoneNumber,
+    phone,
   });
 
   const organizationName = `${firstName}'s Organization`;
@@ -43,7 +43,7 @@ const register = catchAsync(async (req, res) => {
         firstName: user.firstName,
         lastName: user.lastName,
         email: user.email,
-        phoneNumber: user.phoneNumber,
+        phone: user.phone,
       },
     },
   });
@@ -72,7 +72,7 @@ const login = catchAsync(async (req, res) => {
         firstName: user.firstName,
         lastName: user.lastName,
         email: user.email,
-        phoneNumber: user.phoneNumber,
+        phone: user.phone,
       },
     },
   });
