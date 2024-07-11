@@ -1,9 +1,11 @@
+require('dotenv').config();
 const app = require('./app');
 const config = require('./config/config');
 const logger = require('./config/logger');
+const port = process.env.port || 3000;
 
-const server = app.listen(config.port, () => {
-  logger.info(`Listening to port ${config.port}`);
+const server = app.listen(port, () => {
+  logger.info(`Listening to port ${port}`);
 });
 
 const exitHandler = () => {
