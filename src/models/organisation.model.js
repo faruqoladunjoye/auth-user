@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
 module.exports = (sequelize, dataType) => {
-  const organization = sequelize.define('organization', {
+  const organisation = sequelize.define('organisation', {
     id: {
       type: Sequelize.UUID,
       allowNull: false,
@@ -18,5 +18,5 @@ module.exports = (sequelize, dataType) => {
     },
   });
 
-  return organization;
+  return organisation;
 };

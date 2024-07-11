@@ -27,18 +27,18 @@ db.sequelize = sequelizeInstance;
 db.Sequelize = Sequelize;
 
 db.users = require('./user.model')(sequelizeInstance, Sequelize);
-db.organization = require('./organization.model')(sequelizeInstance, Sequelize);
+db.organisation = require('./organisation.model')(sequelizeInstance, Sequelize);
 
-db.organization.belongsToMany(db.users, {
+db.organisation.belongsToMany(db.users, {
   through: 'user_org',
   as: 'users',
-  foreignKey: 'organizationId',
+  foreignKey: 'organisationId',
   onDelete: 'CASCADE',
 });
 
-db.users.belongsToMany(db.organization, {
+db.users.belongsToMany(db.organisation, {
   through: 'user_org',
-  as: 'organizations',
+  as: 'organisations',
   foreignKey: 'userId',
   onDelete: 'CASCADE',
 });
