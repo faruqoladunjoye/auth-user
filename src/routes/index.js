@@ -11,11 +11,11 @@ const defaultRoutes = [
     route: authRoute,
   },
   {
-    path: '/api/users',
+    path: '/users',
     route: userRoute,
   },
   {
-    path: '/api/organizations',
+    path: '/organizations',
     route: organizationRoute,
   },
 ];
