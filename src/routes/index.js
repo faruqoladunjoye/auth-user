@@ -15,7 +15,7 @@ const defaultRoutes = [
     route: userRoute,
   },
   {
-    path: '/organizations',
+    path: '/organisations',
     route: organizationRoute,
   },
 ];
